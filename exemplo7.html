@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Integração com VLibras</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      line-height: 1.6;
+    }
+
+    header, main {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1 {
+      color: #004080;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho com título -->
+  <header>
+    <h1>Bem-vindo ao nosso site</h1>
+    <p>Este site está integrado com o VLibras para acessibilidade em Língua Brasileira de Sinais (Libras).</p>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main>
+    <h2>Sobre Nós</h2>
+    <p>
+      A nossa missão é tornar a informação acessível para todos. Com o plugin VLibras, usuários surdos podem ter acesso ao conteúdo em Libras.
+    </p>
+  </main>
+
+  <!-- Script oficial do VLibras -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Imagens Acessíveis</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    figure {
+      margin-top: 2rem;
+    }
+
+    figcaption {
+      font-style: italic;
+      color: #333;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- Imagem com texto alternativo -->
+    <img src="logo.png" alt="Logotipo da empresa XPTO" width="200" />
+  </header>
+
+  <main>
+    <h1>Análise de Vendas</h1>
+    <p>Abaixo está um gráfico representando o crescimento das vendas da empresa ao longo de 2025.</p>
+
+    <!-- Gráfico com descrição -->
+    <figure>
+      <img src="grafico-vendas.png" alt="Gráfico de barras mostrando o crescimento de vendas em 2025" />
+      <figcaption>Vendas por trimestre - 2025</figcaption>
+    </figure>
+  </main>
+
+  <main>
+    Recursos incluídos:
+        <ul>
+        <li>alt nas imagens para leitura por tecnologias assistivas</li>
+        <li>Uso de `figure` e `figcaption` para semântica clara de gráficos</li>
+        <li>Responsividade básica (max-width: 100% para imagens)</li>
+        <li>Texto introdutório contextualizando o gráfico</li>
+        <li>Estilo limpo e pronto para ampliar</li>
+        </ul>
+</body>
+</html>

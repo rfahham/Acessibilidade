@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alternância de Modo Claro/Escuro</title>
+  <style>
+    /* Estilo para modo claro */
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    /* Estilo para modo escuro */
+    body.dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    /* Botão de alternância */
+    .toggle-button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      background-color: #000;
+      color: #fff;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark-mode .toggle-button {
+      background-color: #e0e0e0;
+      color: #121212;
+    }
+
+    h1 {
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Botão acessível de alternância de tema -->
+  <button 
+    class="toggle-button" 
+    onclick="document.body.classList.toggle('dark-mode')" 
+    aria-label="Alternar entre modo claro e escuro"
+  >
+    Alternar Dark Mode
+  </button>
+
+  <!-- Conteúdo de exemplo -->
+  <main>
+    <h1>Modo Claro / Escuro</h1>
+    <p>
+      Este exemplo permite alternar entre os modos claro e escuro clicando no botão acima.
+      O recurso é útil para melhorar a leitura em diferentes condições de luz e oferecer conforto visual.
+    </p>
+  </main>
+
+</body>
+</html>

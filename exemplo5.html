@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exemplo de Contraste Acessível</title>
+  <style>
+    /* Estilo com bom contraste de cores */
+    body {
+      background-color: #ffffff; /* Fundo branco */
+      color: #000000;            /* Texto preto – contraste 21:1 */
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    .botao {
+      background-color: #000000; /* Fundo preto */
+      color: #ffffff;            /* Texto branco */
+      padding: 10px 20px;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .botao:focus,
+    .botao:hover {
+      outline: 3px solid #0000ff; /* Foco visível */
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <h1>Teste de Contraste Acessível</h1>
+    <p>
+      O botão abaixo foi projetado com alto contraste entre o texto e o fundo para garantir acessibilidade visual adequada.
+    </p>
+
+    <!-- Botão com bom contraste -->
+    <button class="botao">Enviar</button>
+  </main>
+
+</body>
+</html>

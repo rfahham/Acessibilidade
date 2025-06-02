@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Elementos Interativos Acessíveis</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+    }
+
+    button, a {
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    /* Indicação de foco visível para teclado */
+    button:focus, a:focus {
+      outline: 3px solid #00f;
+      outline-offset: 2px;
+    }
+
+    nav {
+      margin-bottom: 2rem;
+    }
+
+    .conteudo {
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menu com botão acessível -->
+  <nav aria-label="Menu principal">
+    <button aria-label="Abrir menu de navegação">☰</button>
+  </nav>
+
+  <!-- Link com descrição associada -->
+  <main class="conteudo">
+    <p>
+      Para entrar em contato conosco, clique no link abaixo:
+    </p>
+
+    <a href="#contato" id="linkContato" aria-labelledby="descContato">Fale conosco</a>
+    <span id="descContato" hidden>Ir para a seção de contato no fim da página</span>
+
+    <!-- Seção de destino -->
+    <section id="contato" style="margin-top: 3rem;">
+      <h2>Contato</h2>
+      <p>Você pode nos enviar um e-mail para contato@empresa.com ou ligar para (00) 1234-5678.</p>
+    </section>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ajuste de Fonte Acessível</title>
+
+  <!-- Estilo padrão e classes de ajuste -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      margin: 2rem;
+      line-height: 1.6;
+    }
+
+    .font-pequena {
+      font-size: 14px;
+    }
+
+    .font-media {
+      font-size: 16px;
+    }
+
+    .font-grande {
+      font-size: 20px;
+    }
+
+    .botoes-acessibilidade {
+      margin-bottom: 1.5rem;
+    }
+
+    .botoes-acessibilidade button {
+      margin-right: 0.5rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body class="font-media">
+  <!-- Controles de acessibilidade -->
+  <div class="botoes-acessibilidade" role="group" aria-label="Ajuste de tamanho da fonte">
+    <button onclick="ajustarFonte('pequena')" aria-label="Reduzir fonte">A-</button>
+    <button onclick="ajustarFonte('media')" aria-label="Fonte padrão">A</button>
+    <button onclick="ajustarFonte('grande')" aria-label="Aumentar fonte">A+</button>
+  </div>
+
+  <!-- Conteúdo de exemplo -->
+  <main>
+    <h1>Exemplo de Ajuste de Fonte</h1>
+    <p>
+      Este é um parágrafo de texto que pode ser ampliado ou reduzido usando os botões acima.
+      Essa funcionalidade ajuda a tornar o conteúdo mais acessível para pessoas com dificuldades visuais.
+    </p>
+
+    <ul>
+        <h1>Destaques:</h1>
+        <li>Fontes ajustáveis com três níveis (pequena, media, grande)</li>
+        <li>Botões com aria-label para acessibilidade via leitores de tela</li>
+        <li>Estrutura semântica com `main` e `h1` </li>
+        <li>licação da classe ao body, afetando todo o conteúdo</li>
+    </ul>
+  </main>
+
+  <!-- Script de ajuste -->
+  <script>
+    function ajustarFonte(tamanho) {
+      document.body.className = 'font-' + tamanho;
+    }
+  </script>
+</body>
+</html>
