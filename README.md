@@ -67,3 +67,172 @@ Este documento descreve os requisitos mínimos de acessibilidade que devem ser c
 * Testes com ferramentas como Lighthouse, axe ou NVDA são fortemente recomendados.
 
 
+Abaixo estão **exemplos práticos de código** para cada item dos requisitos de acessibilidade que mencionamos. Os exemplos são escritos em HTML/CSS/JS onde aplicável, com comentários para facilitar a compreensão da equipe técnica.
+
+---
+
+## 💻 Exemplos de Código – Acessibilidade
+
+---
+
+### 1. **Navegação (estrutura semântica e ordem lógica)**
+
+```html
+<!-- Navegação semântica -->
+<nav>
+  <ul>
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- Ordem lógica: esquerda → direita, cima → baixo -->
+<main>
+  <section id="inicio">...</section>
+  <section id="servicos">...</section>
+  <section id="contato">...</section>
+</main>
+```
+
+---
+
+### 2. **Tipografia (tamanho ajustável, sans-serif)**
+
+```html
+<!-- Fonte padrão e ajuste em CSS -->
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+
+  .font-pequena { font-size: 14px; }
+  .font-media   { font-size: 16px; }
+  .font-grande  { font-size: 20px; }
+</style>
+
+<!-- Controles de ajuste -->
+<button onclick="ajustarFonte('pequena')">A-</button>
+<button onclick="ajustarFonte('media')">A</button>
+<button onclick="ajustarFonte('grande')">A+</button>
+
+<script>
+function ajustarFonte(tamanho) {
+  document.body.className = 'font-' + tamanho;
+}
+</script>
+```
+
+---
+
+### 3. **Imagens e Gráficos (texto alternativo)**
+
+```html
+<!-- Imagem com texto alternativo -->
+<img src="logo.png" alt="Logotipo da empresa XPTO">
+
+<!-- Gráfico com descrição -->
+<figure>
+  <img src="grafico-vendas.png" alt="Gráfico de barras mostrando o crescimento de vendas em 2025">
+  <figcaption>Vendas por trimestre - 2025</figcaption>
+</figure>
+```
+
+---
+
+### 4. **Botões e Elementos Interativos (aria e foco)**
+
+```html
+<!-- Botão com descrição para leitores de tela -->
+<button aria-label="Abrir menu de navegação">☰</button>
+
+<!-- Link com aria-labelledby -->
+<a href="#contato" id="linkContato" aria-labelledby="descContato">Fale conosco</a>
+<span id="descContato" hidden>Ir para a seção de contato no fim da página</span>
+
+<!-- Indicação de foco em CSS -->
+<style>
+  button:focus, a:focus {
+    outline: 3px solid #00f;
+  }
+</style>
+```
+
+---
+
+### 5. **Contraste (bom contraste entre texto e fundo)**
+
+```html
+<!-- Exemplo com bom contraste -->
+<style>
+  body {
+    background-color: #ffffff;
+    color: #000000; /* Contraste 21:1 */
+  }
+
+  .botao {
+    background-color: #000000;
+    color: #ffffff; /* Texto branco sobre fundo preto = alto contraste */
+    padding: 10px;
+  }
+</style>
+
+<button class="botao">Enviar</button>
+```
+
+---
+
+### 6. **Modo Escuro (Dark Mode)**
+
+```html
+<!-- Tema com alternância clara/escura -->
+<style>
+  body {
+    background-color: #fff;
+    color: #000;
+    transition: all 0.3s;
+  }
+
+  body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+</style>
+
+<button onclick="document.body.classList.toggle('dark-mode')">
+  Alternar Dark Mode
+</button>
+```
+
+---
+
+### 7. **VLibras (integração com acessibilidade em Libras)**
+
+```html
+<!-- Script oficial do VLibras -->
+<div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+  new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+```
+
+---
+
+### 8. **Extensões e boas práticas no VS Code**
+
+> Não é um código, mas aqui estão extensões recomendadas com links:
+
+* **[axe Accessibility Linter](https://marketplace.visualstudio.com/items?itemName=deque-systems.vscode-axe-linter)** – Avaliação automática de acessibilidade
+* **[Color Contrast Checker](https://marketplace.visualstudio.com/items?itemName=akamud.vscode-theme-onedark)** – Verificador de contraste
+* **[HTMLHint](https://marketplace.visualstudio.com/items?itemName=mkaufman.HTMLHint)** – Valida práticas acessíveis em HTML
+* **[eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)** – Para projetos React
+
+
